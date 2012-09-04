@@ -1,0 +1,14 @@
+
+en:
+  test:
+    index:
+      title: index
+      addedElement: Added felefoo barment
+      textfield: Textfield
+      button: Button
+      textbetweenlocalisations: Text between localisations
+      dark_text_on_light: Dark Text On Light
+      light_text_on_dark_bg: Light Text On Dark Bg is editable
+      dark_text_on_light_bg: Dark Text On Light Bg is editable
+      some-text: Some<br>Text
+      text-with-a-dash-in-the-key: Text-With-A-Dash-In-The-Key

@@ -1,0 +1,73 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+html {
+}
+
+body {
+  font-family: 'Galdeano', sans-serif;
+  color: #333;
+  text-shadow: 1px 1px white;
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#content {
+  width: 80%;
+  margin: 5% auto;
+  background: #fafafa;
+  border: solid 8px #ccc;
+  box-shadow: 0 0 5px black;
+  padding: 10px;
+  overflow: hidden;
+}
+
+i {
+  font-family: 'Mate', serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Francois One', sans-serif;
+}
+
+/*
+font-family: 'Mate', serif;
+font-family: 'Francois One', sans-serif;
+font-family: 'Galdeano', sans-serif;
+*/
+
+.left,
+.right {
+  width: 46%;
+  padding: 2%;
+}
+.left {
+  float: left;
+  clear: both;
+  text-align: right;
+  color: #666;
+}
+
+.right {
+  float: right;
+  clear: right;
+  text-align: left;
+}

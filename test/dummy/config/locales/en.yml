@@ -1,0 +1,7 @@
+
+en:
+  hello: hullo
+  text-with-html: foo<br>bar
+  date:
+    formats:
+      default: "%Y-%m-%d"

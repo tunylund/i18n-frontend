@@ -1,0 +1,130 @@
+.translation_found {
+  min-width: 10px;
+  display: inline-block;
+  min-height: 10px;
+}
+.translation_found:hover, 
+.translation_found[contenteditable] {
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+  background: rgba(200,200,200,0.5);
+}
+.translation_missing:hover,
+.translation_missing[contenteditable] {
+  box-shadow: 0 0 3px rgba(0,0,0,0.5);
+  background: #fdd;
+  color: #333;
+  text-shadow: none;
+}
+
+.i18nfrontendoverlay {
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity 300ms;
+  background: #fff;
+  box-shadow: 0 0 5px #333;
+  padding: 4px;
+  z-index: 1000;
+}
+.i18nfrontendoverlay-visible {
+  opacity: 1;
+}
+
+.i18nfrontend-success {
+  -webkit-animation: success;
+  -webkit-animation-duration: 1s;
+  -moz-animation: success;
+  -moz-animation-duration: 1s;
+  animation: success;
+  animation-duration: 1s;
+}
+
+.i18nfrontend-error {
+  -webkit-animation: error;
+  -webkit-animation-duration: 1s;
+  -moz-animation: error;
+  -moz-animation-duration: 1s;
+  animation: error;
+  animation-duration: 1s;
+  background: rgba(255,100,100,1);
+}
+
+.i18nfrontend-loader {
+  -webkit-animation: loader;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation: loader;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-iteration-count: infinite;
+  animation: loader;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loader
+{
+  0% {box-shadow: 0 0 3px rgba(150,150,150,0.2) inset;}
+  50% {box-shadow: 0 0 6px rgba(150,150,150,0.8) inset;}
+  100% {box-shadow: 0 0 3px rgba(150,150,150,0.2) inset;}
+}
+
+@-moz-keyframes loader /* Firefox */
+{
+  0% {box-shadow: 0 0 3px rgba(150,150,150,0.2) inset;}
+  50% {box-shadow: 0 0 6px rgba(150,150,150,0.8) inset;}
+  100% {box-shadow: 0 0 3px rgba(150,150,150,0.2) inset;}
+}
+
+@-webkit-keyframes loader /* Safari and Chrome */
+{
+  0% {box-shadow: 0 0 3px rgba(150,150,150,0.2) inset;}
+  50% {box-shadow: 0 0 6px rgba(150,150,150,0.8) inset;}
+  100% {box-shadow: 0 0 3px rgba(150,150,150,0.2) inset;}
+}
+
+@keyframes success
+{
+  0% {background: rgba(255,255,255,0);}
+  25% {background: rgba(0,225,0,0.5);}
+  100% {background: rgba(255,255,255,0);}
+}
+
+@-moz-keyframes success /* Firefox */
+{
+  0% {background: rgba(255,255,255,0);}
+  25% {background: rgba(0,225,0,0.5);}
+  100% {background: rgba(255,255,255,0);}
+}
+
+@-webkit-keyframes success /* Safari and Chrome */
+{
+  0% {background: rgba(255,255,255,0);}
+  25% {background: rgba(0,225,0,0.5);}
+  100% {background: rgba(255,255,255,0);}
+}
+
+@keyframes error
+{
+  0% {background: rgba(255,100,100,1);}
+  25% {background: rgba(255,100,100,0.5);}
+  50% {background: rgba(255,100,100,1);}
+  75% {background: rgba(255,100,100,0.5);}
+  100% {background: rgba(255,100,100,1);}
+}
+
+@-moz-keyframes error /* Firefox */
+{
+  0% {background: rgba(255,100,100,1);}
+  25% {background: rgba(255,100,100,0.5);}
+  50% {background: rgba(255,100,100,1);}
+  75% {background: rgba(255,100,100,0.5);}
+  100% {background: rgba(255,100,100,1);}
+}
+
+@-webkit-keyframes error /* Safari and Chrome */
+{
+  0% {background: rgba(255,100,100,1);}
+  25% {background: rgba(255,100,100,0.5);}
+  50% {background: rgba(255,100,100,1);}
+  75% {background: rgba(255,100,100,0.5);}
+  100% {background: rgba(255,100,100,1);}
+}

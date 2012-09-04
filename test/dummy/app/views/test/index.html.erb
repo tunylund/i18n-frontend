@@ -1,0 +1,142 @@
+<div id="content">
+
+  <div class="left" style="width:auto;color:#222;">
+    <h1 class="left">I18n-frontend</h1>
+    <p class="right">
+      <i>
+      A rack middleware that makes it possible for you to edit your
+      localisations right within your application.<br>
+      Just add the rack app, to your rack setup and start typing away.
+      </i><br>
+      <br>
+
+      <em style="color:#d00">Warning!</em> Will utterly destroy any comments you have in your 
+      localisation-files. Most likely will also make a mess of them, but there's a fair chance that it doesn't.
+      <br>
+      <br>
+      Tested with Rails on a small app... But feel free to try your luck. Should work with any framework that is compatible with rack, uses I18n-library and 
+      stores its localisation files within 'appfolder/config/locales'.
+    </p>
+  </div>
+
+  <div class="left">
+    <p>Dark text on light bg should be editable</p>
+  </div>
+  <div class="right">
+    <p style="background: #ddd;color: #333;">
+      <%= t("test.index.dark_text_on_light_bg") %></p>
+  </div>
+
+  <div class="left">
+    <p>Light text on dark bg should be editable</p>
+  </div>
+  <div class="right">
+    <p style="background: #333;color: #ddd;text-shadow: 1px 1px black">
+      <%= t("test.index.light_text_on_dark_bg") %></p>
+  </div>
+
+  <div class="left">
+    <p>Text with a key with - in it should not matter</p>
+  </div>
+  <div class="right" id="f">
+    <p><%= t '.text-with-a-dash-in-the-key' %></p>
+  </div>
+
+  <div class="left">
+    <p>html-safe text should not be editable</p>
+  </div>
+  <div class="right">
+    <p><%= t('.some-text').html_safe %></p>
+  </div>
+
+  <div class="left">
+    <p>Text with html should survive escapes</p>
+  </div>
+  <div class="right">
+    <p><%= t('.some-text') %></p>
+  </div>
+
+  <div class="left">
+    <p>Text localized with t-function should be editable</p>
+  </div>
+  <div class="right">
+    <p>
+      <%= t("test.index.text-localized-with-t") %>
+    </p>
+  </div>
+
+  <div class="left">
+    <p>
+      Text localized with I18n.t-function should not be editable
+    </p>
+  </div>
+  <div class="right">
+    <p>
+      <%= I18n.t("test.index.text-localized-with-i18n") %>
+    </p>
+  </div>
+
+  <div class="left">
+    <p>
+      Text localized with I18n.t-function should be editable
+      if the rescue_format is :html
+    </p>
+  </div>
+  <div class="right">
+    <p>
+      <%= I18n.t("test.index.text-localized-with-i18n-and-format-html", :rescue_format => :html) %>
+    </p>
+  </div>
+
+  <div class="left">
+    <p>
+      If a default is given, we shouldn't mess with it
+    </p>
+  </div>
+  <div class="right">
+    <p>
+      <%= I18n.t("test.index.i-dont-exist", :default => "This text is a default text") %>
+    </p>
+  </div>
+
+  <div class="left">
+    <p>text before or after localisation should not be affected</p>
+  </div>
+  <div class="right">
+    <p>
+      text before localisation <%= t('test.index.textbetweenlocalisations') %> text after localisation 
+    </p>
+  </div>
+
+  <div class="left">
+    <p>Date localized with format fetched via t-function should not be affected</p>
+  </div>
+
+  <div class="right">
+    <p>date: <%= l(DateTime.now, :format => t('date.formats.default')) %></p>
+  </div>
+
+  <div class="left">
+    <p>localized button texts and input values should be editable</p>
+  </div>
+
+  <div class="right">
+    <p>
+      <input type="button" value='<%= t('test.index.button') %>'>
+      <input type="text" value='<%= t('test.index.textfield') %>'>
+    </p>
+  </div>
+
+  <div class="left">
+    <p>Dynamically added elements should have editable localisations</p>
+  </div>
+
+  <div class="right" id="dynamicly-added-texts">
+    <script>
+     setInterval(function() {
+       $("<span><%= t("test.index.addedElement") %></span> ")
+        .appendTo("#dynamicly-added-texts");
+     }, 5000);
+    </script>
+  </div>
+</div>
