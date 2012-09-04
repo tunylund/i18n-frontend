@@ -24,5 +24,7 @@ Add this to your `config/environments/development.rb`
   ...
 ```
 
-*Warning!* 
+__Warning!__
 This gem will utterly destroy all comments in localisation files due to the fact that no one has written a yaml library that preserved comments (hint, hint).
+
+Additionally, the utility is still at it's early stages, so __beware of dragons__.
