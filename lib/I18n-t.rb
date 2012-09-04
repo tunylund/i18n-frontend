@@ -1,4 +1,9 @@
-# save the original translate-method
+# Here be nasty hackeryhacks.
+# Basically the point is to overwrite functions in i18n library to allow
+# us to mark every translation with some kind of a identifier.
+
+
+# save the original translate-methods
 I18n.define_singleton_method(:translate_orig, I18n.method(:translate).clone)
 I18n.define_singleton_method(:localize_orig, I18n.method(:localize).clone)
 
@@ -24,17 +29,6 @@ I18n.define_singleton_method(:localize, Proc.new {|object, options = {}|
   localize_orig(object, options)
 })
 
-# overwrite t-method to use the new translate method
+# overwrite 't'- and 'l'-methods to use the new translate methods
 I18n.define_singleton_method(:t, Proc.new {|*args| translate(*args)})
 I18n.define_singleton_method(:l, Proc.new {|object, options = {}| localize(object, options)})
-
-module ActionView
-  # = Action View Translation Helpers
-  module Helpers
-    module TranslationHelper
-
-      
-
-    end
-  end
-end
