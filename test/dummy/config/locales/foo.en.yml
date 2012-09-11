@@ -1,0 +1,9 @@
+
+en:
+  test:
+    index:
+      title: index
+      addedElement: Added felefoo barment
+      textfield: Textfield
+      button: Button
+      textbetweenlocalisations: Text between localisations
